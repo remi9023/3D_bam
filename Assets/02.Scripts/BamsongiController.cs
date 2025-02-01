@@ -17,7 +17,7 @@ public class BamsongiController : MonoBehaviour
     }
     void Start()
     {
-        shoot(new Vector3(0, 200, 2000));
+        //shoot(new Vector3(0, 200, 2000));
     }
 
     // Update is called once per frame
