@@ -9,10 +9,12 @@ public class BamsongiGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             GameObject bamsongi = Instantiate(bamsongiPrefab);
-            bamsongi.GetComponent<BamsongiController>().shoot(new Vector3(0, 200, 2000));
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Vector3 worldDir = ray.direction;
+            bamsongi.GetComponent<BamsongiController>().shoot(worldDir.normalized * 2000);
 
         }
     }
